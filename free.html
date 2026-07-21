@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>見ている人へ</title>
+    <style>
+        body{
+            padding:10px 10px;
+            background-color: rgb(255, 255, 255);
+        }
+        h1{
+            color: aqua;
+            margin-left: 50%;
+            margin-top: 0%;
+        }
+        button{
+            font-size: 35px;
+            color: rgb(0, 0, 0);
+            position: absolute;
+        }
+        a{
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="button1">これを押して！</button>
+    <div id="area"></div>
+    <script>
+        const btn1 = document.getElementById("button1")
+        const area =document.getElementById("area")
+        btn1.style.left = "50%"
+        btn1.style.top = "10%"
+        if (btn1){
+            btn1.addEventListener('click',()=>{
+                btn1.style.display = "none"
+                alert("I love you次に進んで")
+                const btn2 = document.createElement("button")
+                btn1.style.left = "50%"
+                btn1.style.top = "20%"
+                btn2.style.display = ('block')
+                btn2.style.left = "50%"
+                btn2.style.top = "20%"
+                btn2.innerText = "だまされたな？笑笑これを押してみ？"
+                btn1.style.display = "none"
+                btn2.onclick = ()=>{
+                    area.innerHTML = ` 
+                    <a href="https://rice-love-man.github.io/fake-site/"
+                    target="_blank">ここでわかるよ！ by孔明<a/>
+                    `
+                    btn2.style.display = "none"
+                }
+                area.appendChild(btn2)
+            })
+        }
+    </script>
+</body>
+</html>
